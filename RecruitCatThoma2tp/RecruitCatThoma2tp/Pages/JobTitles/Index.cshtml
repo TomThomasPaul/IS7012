@@ -1,0 +1,68 @@
+﻿@page
+@model RecruitCatThoma2tp.Pages.JobTitles.IndexModel
+
+@{
+    ViewData["Title"] = "All Job Titles";
+}
+
+<h1>All Job Titles</h1>
+
+<p>
+    <a asp-page="Create">Create New Job Title</a>
+</p>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JobTitle[0].JobTitleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobTitle[0].MinimumSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobTitle[0].MaximumSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobTitle[0].FullTimeEmployment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.JobTitle) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobTitleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinimumSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaximumSalary)
+            </td>
+            <td>
+                @* @Html.DisplayFor(modelItem => item.FullTimeEmployment)  *@
+
+
+                @{ if (item.FullTimeEmployment)
+                    {
+                        <span class="badge badge-success">Full Time</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-warning">Part Time</span>
+                    }
+
+
+                }
+
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.JobTitleId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.JobTitleId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.JobTitleId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
