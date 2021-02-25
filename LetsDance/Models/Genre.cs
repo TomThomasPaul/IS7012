@@ -14,7 +14,11 @@ namespace LetsDance.Models
         [Required]
         [StringLength(50)]
         public string GenreName { get; set; }
+
+        [System.ComponentModel.DisplayName("Budding Dancer")]
         public List<BuddingDancer> BuddingDancers { get; set; }
+
+        [System.ComponentModel.DisplayName("Faculty")]
         public List<Faculty> Faculties { get; set; }
     }
 }

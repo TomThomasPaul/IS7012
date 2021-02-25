@@ -7,6 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using LetsDance.Data;
+using Gtt.Uc.EntityFramework;
 
 namespace LetsDance
 {
@@ -23,6 +26,9 @@ namespace LetsDance
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddGttMem<LetsDanceContext>("857de72e-1e01-430a-8af2-a29879698538");
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

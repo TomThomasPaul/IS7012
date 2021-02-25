@@ -17,12 +17,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Branches\" />
-    <Folder Include="Pages\BuddingDancers\" />
-    <Folder Include="Pages\ClassSchedules\" />
-    <Folder Include="Pages\Faculties\" />
-    <Folder Include="Pages\Genres\" />
-  </ItemGroup>
-
 </Project>

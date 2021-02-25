@@ -1,0 +1,66 @@
+﻿@page
+@model LetsDance.Pages.BuddingDancers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Dancer Details</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BuddingDancer[0].DancerFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuddingDancer[0].DancerLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuddingDancer[0].DancerBirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuddingDancer[0].JoiningDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuddingDancer[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuddingDancer[0].Branch)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.BuddingDancer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DancerFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DancerLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DancerBirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JoiningDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.GenreName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch.Address)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.BuddingDancerId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.BuddingDancerId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.BuddingDancerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

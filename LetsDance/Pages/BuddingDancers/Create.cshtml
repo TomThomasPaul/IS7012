@@ -1,0 +1,55 @@
+﻿@page
+@model LetsDance.Pages.BuddingDancers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add New Dancer</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BuddingDancer.DancerFirstName" class="control-label"></label>
+                <input asp-for="BuddingDancer.DancerFirstName" class="form-control" />
+                <span asp-validation-for="BuddingDancer.DancerFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuddingDancer.DancerLastName" class="control-label"></label>
+                <input asp-for="BuddingDancer.DancerLastName" class="form-control" />
+                <span asp-validation-for="BuddingDancer.DancerLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuddingDancer.DancerBirthDate" class="control-label"></label>
+                <input asp-for="BuddingDancer.DancerBirthDate" class="form-control" />
+                <span asp-validation-for="BuddingDancer.DancerBirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuddingDancer.JoiningDate" class="control-label"></label>
+                <input asp-for="BuddingDancer.JoiningDate" class="form-control" />
+                <span asp-validation-for="BuddingDancer.JoiningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuddingDancer.GenreId" class="control-label"></label>
+                <select asp-for="BuddingDancer.GenreId" class ="form-control" asp-items="ViewBag.GenreId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuddingDancer.BranchId" class="control-label"></label>
+                <select asp-for="BuddingDancer.BranchId" class ="form-control" asp-items="ViewBag.BranchId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

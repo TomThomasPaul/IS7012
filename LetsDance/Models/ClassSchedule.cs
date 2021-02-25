@@ -18,7 +18,12 @@ namespace LetsDance.Models
         [System.ComponentModel.DisplayName("Meeting Time")]
         [DataType(DataType.Time)]
         public DateTime MeetingTime { get; set; }
+
+        [System.ComponentModel.DisplayName("Duration ( In Hours )")]
+        [Required]
         public int Duration { get; set; }
+
+        [System.ComponentModel.DisplayName("Budding Dancer")]
         public BuddingDancer BuddingDancer { get; set; }
         public int BuddingDancerId { get; set; }
         public Faculty Faculty { get; set; }

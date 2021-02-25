@@ -11,13 +11,11 @@ namespace LetsDance.Models
         public int FacultyId { get; set; }
 
         [System.ComponentModel.DisplayName("First Name")]
-
         [Required]
         [StringLength(50)]
         public string FacultyFirstName { get; set; }
 
         [System.ComponentModel.DisplayName("Last Name")]
-
         [Required]
         [StringLength(50)]
         public string FacultyLastName { get; set; }
@@ -27,9 +25,21 @@ namespace LetsDance.Models
         public int Experience { get; set; }
         public Branch Branch { get; set; }
         public int BranchId { get; set; }
+
+        [System.ComponentModel.DisplayName("Class Schedule")]
         public List<ClassSchedule> ClassSchedules { get; set; }
         public Genre Genre { get; set; }
         public int GenreId { get; set; }
+
+        public string FacultyFullName
+
+        {
+            get
+
+            {
+                return $"{FacultyFirstName} {FacultyLastName}";
+            }
+        }
 
     }
 }

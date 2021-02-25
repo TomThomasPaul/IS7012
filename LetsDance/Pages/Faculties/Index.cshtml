@@ -1,0 +1,66 @@
+﻿@page
+@model LetsDance.Pages.Faculties.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Our Faculty</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty[0].FacultyFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty[0].FacultyLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty[0].Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty[0].Experience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty[0].Branch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty[0].Genre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Faculty) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FacultyFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FacultyLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Experience)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.GenreName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.FacultyId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.FacultyId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.FacultyId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

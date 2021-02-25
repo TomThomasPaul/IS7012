@@ -1,0 +1,51 @@
+﻿@page
+@model LetsDance.Pages.ClassSchedules.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add New Schedule</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClassSchedule.MeetingDay" class="control-label"></label>
+                <input asp-for="ClassSchedule.MeetingDay" class="form-control" />
+                <span asp-validation-for="ClassSchedule.MeetingDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassSchedule.MeetingTime" class="control-label"></label>
+                <input asp-for="ClassSchedule.MeetingTime" class="form-control" />
+                <span asp-validation-for="ClassSchedule.MeetingTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassSchedule.Duration" class="control-label"></label>
+                <input asp-for="ClassSchedule.Duration" class="form-control" />
+                <span asp-validation-for="ClassSchedule.Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassSchedule.BuddingDancerId" class="control-label"></label>
+                <select asp-for="ClassSchedule.BuddingDancerId" class ="form-control" asp-items="ViewBag.BuddingDancerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassSchedule.FacultyId" class="control-label"></label>
+                <select asp-for="ClassSchedule.FacultyId" class ="form-control" asp-items="ViewBag.FacultyId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

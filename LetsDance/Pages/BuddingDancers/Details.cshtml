@@ -1,0 +1,54 @@
+﻿@page
+@model LetsDance.Pages.BuddingDancers.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Dancer Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BuddingDancer.DancerFirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BuddingDancer.DancerFirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BuddingDancer.DancerLastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BuddingDancer.DancerLastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BuddingDancer.DancerBirthDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BuddingDancer.DancerBirthDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BuddingDancer.JoiningDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BuddingDancer.JoiningDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BuddingDancer.Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BuddingDancer.Genre.GenreName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BuddingDancer.Branch)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BuddingDancer.Branch.Address)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.BuddingDancer.BuddingDancerId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

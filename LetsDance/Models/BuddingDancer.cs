@@ -33,7 +33,18 @@ namespace LetsDance.Models
         public int GenreId { get; set; }
         public Branch Branch { get; set; }
         public int BranchId { get; set; }
+
+        [System.ComponentModel.DisplayName("Class Schedule")]
         public List<ClassSchedule> ClassSchedules { get; set; }
+
+        public string DancerFullName
+
+        { get
+
+            {
+                return $"{DancerFirstName} {DancerLastName}";
+            }
+        }
        
 
     }
