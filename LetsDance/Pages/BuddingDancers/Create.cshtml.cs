@@ -35,6 +35,22 @@ namespace LetsDance.Pages.BuddingDancers
         {
             if (!ModelState.IsValid)
             {
+                
+                    ViewData["BranchId"] = new SelectList(_context.Branch, "BranchId", "Address");
+                    ViewData["GenreId"] = new SelectList(_context.Set<Genre>(), "GenreId", "GenreName");
+
+                return Page();
+            }
+
+            int birthYear = BuddingDancer.DancerBirthDate.Year;
+            int lastAllowedYear = DateTime.Now.Year - 5;
+            if (birthYear > lastAllowedYear)
+            {
+                ModelState.AddModelError(key: "BuddingDancer.DancerBirthDate", errorMessage: "Must be older than 5 years");
+            }
+
+            if (!ModelState.IsValid)
+            {
                 return Page();
             }
 

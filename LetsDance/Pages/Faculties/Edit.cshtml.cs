@@ -52,6 +52,34 @@ namespace LetsDance.Pages.Faculties
                 return Page();
             }
 
+            decimal? facultySalary = Faculty.Salary;
+            decimal minimunSalary = 20000;
+            if (facultySalary < minimunSalary)
+            {
+                ModelState.AddModelError(key: "Faculty.Salary", errorMessage: "Annual salary should be more than the minimum salary amount i.e 20000");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                ViewData["BranchId"] = new SelectList(_context.Branch, "BranchId", "Address");
+                ViewData["GenreId"] = new SelectList(_context.Set<Genre>(), "GenreId", "GenreName");
+                return Page();
+            }
+
+            decimal? facultyExperience = Faculty.Experience;
+            decimal minimumExperience = 5;
+            if (facultyExperience < minimumExperience)
+            {
+                ModelState.AddModelError(key: "Faculty.Experience", errorMessage: "Faculty should have at least 5 years of dance experience");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                ViewData["BranchId"] = new SelectList(_context.Branch, "BranchId", "Address");
+                ViewData["GenreId"] = new SelectList(_context.Set<Genre>(), "GenreId", "GenreName");
+                return Page();
+            }
+
             _context.Attach(Faculty).State = EntityState.Modified;
 
             try
