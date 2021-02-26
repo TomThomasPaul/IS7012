@@ -1,0 +1,45 @@
+﻿@page
+@model LetsDance.Pages.HelpModel
+@{
+}
+
+
+@*enquiry form*@
+
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Inquiry.InquirerName" class="control-label"></label>
+        <input asp-for="Inquiry.InquirerName" class="form-control" />
+        <span asp-validation-for="Inquiry.InquirerName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Inquiry.InquirerEmail" class="control-label"></label>
+        <input asp-for="Inquiry.InquirerEmail" class="form-control" />
+        <span asp-validation-for="Inquiry.InquirerEmail" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Inquiry.InquirerPhone" class="control-label"></label>
+        <input asp-for="Inquiry.InquirerPhone" class="form-control" />
+        <span asp-validation-for="Inquiry.InquirerPhone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Inquiry.InquirerMessage" class="control-label"></label>
+        <input asp-for="Inquiry.InquirerMessage" class="form-control" />
+        <span asp-validation-for="Inquiry.InquirerMessage" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+@{
+
+    if (TempData["successMessage"] != null)
+    {
+
+        <h4 class="bg-success">@TempData["successMessage"]</h4>
+    }
+
+}

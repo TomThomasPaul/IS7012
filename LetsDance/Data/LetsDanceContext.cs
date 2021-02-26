@@ -23,5 +23,7 @@ namespace LetsDance.Data
         public DbSet<LetsDance.Models.Faculty> Faculty { get; set; }
 
         public DbSet<LetsDance.Models.Genre> Genre { get; set; }
+
+        public DbSet<LetsDance.Models.Inquiry> Inquiry { get; set; }
     }
 }
