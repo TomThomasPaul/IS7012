@@ -1,0 +1,54 @@
+﻿@page
+@model LetsDance.Pages.Inquiries.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Inquiry[0].InquirerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inquiry[0].InquirerEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inquiry[0].InquirerPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inquiry[0].InquirerMessage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Inquiry) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InquirerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InquirerEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InquirerPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InquirerMessage)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.InquiryId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.InquiryId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.InquiryId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
