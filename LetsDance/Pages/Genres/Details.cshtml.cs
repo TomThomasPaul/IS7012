@@ -28,7 +28,10 @@ namespace LetsDance.Pages.Genres
                 return NotFound();
             }
 
-            Genre = await _context.Genre.FirstOrDefaultAsync(m => m.GenreId == id);
+            Genre = await _context.Genre
+
+                .Include(x => x.BuddingDancers)
+                .FirstOrDefaultAsync(m => m.GenreId == id);
 
             if (Genre == null)
             {

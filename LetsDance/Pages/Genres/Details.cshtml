@@ -18,6 +18,30 @@
         </dd>
     </dl>
 </div>
+
+<h4> Buddin Dancers</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Fisrt Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Joining Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Genre in Model.Genre.BuddingDancers)
+        {
+            <tr>
+                <th scope="row">@Genre.DancerFirstName</th>
+                <td>@Genre.DancerLastName</td>
+                <td>@Genre.JoiningDate</td>
+
+                <td><a asp-page="/BuddingDancers/Details" asp-route-id="@Genre.GenreId">Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Genre.GenreId">Edit</a> |
     <a asp-page="./Index">Back to List</a>

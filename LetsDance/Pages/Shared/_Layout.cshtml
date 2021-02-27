@@ -29,8 +29,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-page="/Administration">Administration</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="" data-toggle="dropdown">Administration</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link text-dark" asp-area="" asp-page="/BuddingDancers/Index">Budding Dancers</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-page="/Faculties/Index">Faculties</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-page="/Genres/Index">Genres</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-page="/ClassSchedules/Index">Class Schedules</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-page="/Branches/Index">Branches</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -38,7 +45,7 @@
         </nav>
     </header>
     <div class="">
-        <main role="main" class="pb-3 ml-0 mr-0" >
+        <main role="main" class="pb-3 ml-0 mr-0">
             @RenderBody()
         </main>
     </div>
@@ -56,3 +63,8 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+
+
+
+
+                  
