@@ -22,7 +22,7 @@ namespace LetsDance.Pages.BuddingDancers
         public IActionResult OnGet()
         {
         ViewData["BranchId"] = new SelectList(_context.Branch, "BranchId", "Address");
-        ViewData["GenreId"] = new SelectList(_context.Set<Genre>(), "GenreId", "GenreName");
+        ViewData["GenreId"] = new SelectList(_context.Genre, "GenreId", "GenreName");
             return Page();
         }
 
@@ -35,12 +35,9 @@ namespace LetsDance.Pages.BuddingDancers
         {
             if (!ModelState.IsValid)
             {
-                
-                    ViewData["BranchId"] = new SelectList(_context.Branch, "BranchId", "Address");
-                    ViewData["GenreId"] = new SelectList(_context.Set<Genre>(), "GenreId", "GenreName");
-
                 return Page();
             }
+
 
             int birthYear = BuddingDancer.DancerBirthDate.Year;
             int lastAllowedYear = DateTime.Now.Year - 5;
@@ -51,8 +48,12 @@ namespace LetsDance.Pages.BuddingDancers
 
             if (!ModelState.IsValid)
             {
+                ViewData["BranchId"] = new SelectList(_context.Branch, "BranchId", "Address");
+                ViewData["GenreId"] = new SelectList(_context.Set<Genre>(), "GenreId", "GenreName");
+
                 return Page();
             }
+
 
             _context.BuddingDancer.Add(BuddingDancer);
             await _context.SaveChangesAsync();

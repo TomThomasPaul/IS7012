@@ -26,6 +26,9 @@
                 @Html.DisplayNameFor(model => model.BuddingDancer[0].JoiningDate)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.BuddingDancer[0].PastStudent)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.BuddingDancer[0].Genre)
             </th>
             <th>
@@ -50,6 +53,9 @@
                 @Html.DisplayFor(modelItem => item.JoiningDate)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.PastStudent)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Genre.GenreName)
             </td>
             <td>
@@ -58,7 +64,9 @@
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.BuddingDancerId">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.BuddingDancerId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.BuddingDancerId">Delete</a>
+                <a asp-page="./Delete" asp-route-id="@item.BuddingDancerId">Delete</a>|
+                <a asp-page="./Update" asp-route-id="@item.BuddingDancerId">Update Status</a>
+
             </td>
         </tr>
 }

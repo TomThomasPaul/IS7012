@@ -24,11 +24,15 @@ namespace LetsDance.Models
         public decimal? Salary { get; set; }
         public int Experience { get; set; }
         public Branch Branch { get; set; }
+
+        [System.ComponentModel.DisplayName("Branch")]
         public int BranchId { get; set; }
 
         [System.ComponentModel.DisplayName("Class Schedule")]
         public List<ClassSchedule> ClassSchedules { get; set; }
         public Genre Genre { get; set; }
+
+        [System.ComponentModel.DisplayName("Genre")]
         public int GenreId { get; set; }
 
         public string FacultyFullName

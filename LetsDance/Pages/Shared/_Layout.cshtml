@@ -21,14 +21,14 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" style="margin-left : 60%">
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" style="margin-left : 50%">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item ">
                             <a class="nav-link text-white" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
+                        <li><a class="nav-link text-white" asp-area="" asp-page="/Application">Apply</a></li>
+                        <li><a class="nav-link  text-white" asp-area="" asp-page="/AboutUs">About Us</a></li>
+                        <li><a class="nav-link  text-white" asp-area="" asp-page="/Help">Help</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" href="" data-toggle="dropdown">Administration</a>
                             <ul class="dropdown-menu">
@@ -37,6 +37,9 @@
                                 <li><a class="nav-link text-dark" asp-area="" asp-page="/Genres/Index">Genres</a></li>
                                 <li><a class="nav-link text-dark" asp-area="" asp-page="/ClassSchedules/Index">Class Schedules</a></li>
                                 <li><a class="nav-link text-dark" asp-area="" asp-page="/Branches/Index">Branches</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-page="/BuddingDancers/Search">Search</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-page="/Inquiries/Index">Inquiries</a></li>
+
                             </ul>
                         </li>
                     </ul>
@@ -52,7 +55,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - LetsDance - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2021 - LetsDance - <a asp-area="" asp-page="/Index">Home</a>
         </div>
     </footer>
 

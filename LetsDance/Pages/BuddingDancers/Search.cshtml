@@ -1,0 +1,96 @@
+﻿@page
+@model LetsDance.Pages.BuddingDancers.SearchModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search Budding Dancers</h1>
+
+<div class="row">
+    <div class="col">
+        <form method="get" action="" class="form-inline">
+            <input asp-for="SearchTerm" class="form-control mr-sm-2 mb-2" placeholder="Search Last Name " />
+            <button type="submit" class="btn btn-primary mb-2">Search</button>
+        </form>
+    </div>
+</div>
+@if (Model.SearchDone)
+{
+    if (Model.BuddingDancer.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BuddingDancer[0].DancerFirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BuddingDancer[0].DancerLastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BuddingDancer[0].DancerBirthDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BuddingDancer[0].JoiningDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BuddingDancer[0].PastStudent)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BuddingDancer[0].Genre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BuddingDancer[0].Branch)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.BuddingDancer)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DancerFirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DancerLastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DancerBirthDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.JoiningDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PastStudent)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Genre.GenreName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Branch.AddressLine1)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.BuddingDancerId">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.BuddingDancerId">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.BuddingDancerId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        
+    }
+    else
+    {
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-info">
+                    No results match your term <strong>@Model.SearchTerm</strong>
+                </div>
+            </div>
+        </div>
+    }
+}
+

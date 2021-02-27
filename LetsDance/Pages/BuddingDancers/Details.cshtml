@@ -8,6 +8,7 @@
 <h1>Dancer Details</h1>
 
 <div>
+    
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -33,6 +34,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.BuddingDancer.JoiningDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BuddingDancer.PastStudent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BuddingDancer.PastStudent)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.BuddingDancer.Genre)

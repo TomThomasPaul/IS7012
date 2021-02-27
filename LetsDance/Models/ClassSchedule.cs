@@ -23,10 +23,14 @@ namespace LetsDance.Models
         [Required]
         public int Duration { get; set; }
 
-        [System.ComponentModel.DisplayName("Budding Dancer")]
+       
         public BuddingDancer BuddingDancer { get; set; }
+
+        [System.ComponentModel.DisplayName("Budding Dancer")]
         public int BuddingDancerId { get; set; }
         public Faculty Faculty { get; set; }
+
+        [System.ComponentModel.DisplayName("Faculty")]
         public int FacultyId { get; set; }
 
 

@@ -12,11 +12,28 @@ for details on configuring this project to bundle and minify static web assets. 
     height: 1100px;
     
 }
+.circle {
+    background-color: mediumaquamarine;
+    height: 400px;
+    width: 400px;
+    border-radius: 100%;
+}
+
+.backgroundAbout {
+    background-image: url("../images/altDance.jpg");
+    position: relative;
+    opacity: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1100px;
+}
+
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Provide sufficient contrast against white background */
@@ -102,7 +119,8 @@ body {
     font-size: 30px;
     text-align: center;
     color: #333333;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .gtco-testimonials .owl-stage-outer {

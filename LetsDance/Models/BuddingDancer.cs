@@ -29,9 +29,18 @@ namespace LetsDance.Models
         [System.ComponentModel.DisplayName("Joining Date")]
         [DataType(DataType.Date)]
         public DateTime JoiningDate { get; set; }
+
+        [DisplayName(" Past Student ")]
+        public bool PastStudent { get; set; }
+
+
         public Genre Genre { get; set; }
+
+        [System.ComponentModel.DisplayName("Genre")]
         public int GenreId { get; set; }
         public Branch Branch { get; set; }
+
+        [System.ComponentModel.DisplayName("Location")]
         public int BranchId { get; set; }
 
         [System.ComponentModel.DisplayName("Class Schedule")]

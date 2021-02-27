@@ -39,7 +39,7 @@ namespace LetsDance.Pages
             await _context.SaveChangesAsync();
             TempData["successMessage"] = "Inquiry Received. We will get back to you shortly.";
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Help");
         }
 
 

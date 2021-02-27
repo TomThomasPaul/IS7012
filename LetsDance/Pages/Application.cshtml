@@ -1,0 +1,64 @@
+﻿@page
+@model LetsDance.Pages.ApplicationModel
+@{
+}
+<div class="background">
+    <h5 class=" text-white ml-3 "></h5>
+    <p class=" text-white ml-3 ">APPLICATION PROCESS</p>
+
+
+
+    <div>
+
+
+
+        <div class="col-sm-7 slideanim">
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                </div>
+            </div>
+            <textarea class="form-control" id="interest" name="interest" placeholder="Interested Genre" rows="1"></textarea><br>
+
+        </div>
+
+        <div class="row ml-xl-3">
+            <form method="post">
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary" asp-page-handler="Submission" />
+
+                </div>
+            </form>
+        </div>
+
+
+        @if (TempData["notice"] != null)
+        {
+            <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Success!</strong> Registered Successfully.
+            </div>
+        }
+
+
+
+
+    </div>
+
+</div>
+
+
+   
+
+
+           
+
+
+   
+
+
+  
+
